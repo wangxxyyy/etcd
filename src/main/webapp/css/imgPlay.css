@@ -1,0 +1,18 @@
+
+body,ul,li,img,div{ margin:0px; padding:0px;}
+ul,ol,li{ list-style-type:none;}
+img,a img{ border:0;}
+
+.slideshow{ width:720px; height:548px; margin:0 px auto; position:relative;background-color:#eee}
+.slideshow-area{ width:720px; height:548px;  overflow:hidden;}
+.slideshow-area li{position:absolute;}
+.slideshow-bullets ul{ width:720px; overflow:hidden; text-align:center;bottom:5px;position: fixed;z-index: 100;}
+.slideshow-bullets li{ width:12px; height:14px; background:url(../images/bullets.png) 0 0 no-repeat; display:inline-block; margin-right:8px; font-size:0px; cursor:pointer; overflow:hidden;}
+.slideshow-bullets li{ *display:inline;}
+.slideshow-bullets .current{ background-position:0 -14px;}
+
+.prev,.next{ display:block; width:42px; height:42px; text-indent:-9999px; background:url(../images/prev_next.png) no-repeat; position:absolute; top:235px; cursor:pointer; z-index:10;}
+.prev{ background-position:0 0; left:20px;}
+.prev:hover{ background-position:0 -44px;}
+.next{ background-position:-44px 0; right:20px;}
+.next:hover{ background-position:-44px -44px;}

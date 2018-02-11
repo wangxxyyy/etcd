@@ -1,0 +1,136 @@
+.bt_table{
+	background-color:#F8F8F8;
+	margin:2px 0 0 0;
+	height: 35px;
+}
+.bt_table tr{
+	background-color:#F8F8F8;
+	}
+.bt_table td{
+	background:transparent;
+}
+.bt_table td div{
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#F5F9F8,endColorstr=#E4E7EC,GradientType=0);
+	border:solid 1px #C9CBCA;
+	word-wrap : normal; 
+	height: 20px;
+	vertical-align: middle;
+	line-height: 20px;
+	cursor: pointer;
+	margin-left: 10px;
+}
+.bt_table td div:HOVER{
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#000000,endColorstr=#FFFFFF,GradientType=0);
+  border:solid 1px red;
+}
+
+.bt_table td div span{
+	height: 20px;
+	text-align: left;
+	line-height: 20px;
+	vertical-align: middle;
+	background-position:center center ;
+	background-repeat: no-repeat;
+	float: left;
+}
+
+.bt_table_div{
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#F5F9F8,endColorstr=#E4E7EC,GradientType=0);
+	border:solid 1px #C9CBCA;
+	word-wrap : normal; 
+	height: 20px;
+	vertical-align: middle;
+	line-height: 20px;
+	cursor: pointer;
+	float: left;
+	margin-left:6px; 
+}
+.bt_table_div span{
+	height: 20px;
+	text-align: left;
+	line-height: 20px;
+	vertical-align: middle;
+	background-position:center center ;
+	background-repeat: no-repeat;
+	float: left;
+}
+
+
+.bt_search {
+	width:18px;
+	background-image: url("../images/button/bt_search.gif");
+}
+.bt_add {
+	width:18px;
+	background-image: url("../images/button/bt_add.gif");
+}
+.bt_add2 {
+	width:18px;
+	background-image: url("../images/button/bt_add2.png");
+}
+.bt_add3 {
+	width:18px;
+	background-image: url("../images/button/bt_add3.png");
+}
+.bt_add4 {
+	width:18px;
+	background-image: url("../images/button/bt_add4.png");
+}
+.bt_add5 {
+	width:18px;
+	background-image: url("../images/button/bt_add5.png");
+}
+.bt_add6 {
+	width:18px;
+	background-image: url("../images/button/bt_add6.png");
+}
+.bt_delete {
+	width:18px;
+	background-image: url("../images/button/bt_delete.gif");
+}
+.bt_edit{
+	width:18px;
+	background-image: url("../images/button/bt_edit.gif");
+}
+.bt_print{
+	width:18px;
+	background-image: url("../images/button/bt_print.gif");
+}
+.bt_save{
+	width:18px;
+	background-image: url("../images/button/bt_save.gif");
+}
+.bt_move{
+	width:18px;
+	background-image: url("../images/button/bt_moves.png");
+}
+.bt_cancel{
+	width:18px;
+	background-image: url("../images/button/bt_cancel.gif");
+}
+.bt_reset{
+	width:18px;
+	background-image: url("../images/button/bt_reset.png");
+}
+.bt_back{
+	width:18px;
+	background-image: url("../images/button/bt_back.png");
+}
+.bt_select{
+	background-image: url("../images/button/bt_browser.png");
+	cursor: pointer;
+	height: 16px;
+	width: 16px;
+	border: none;
+}
+.bt_browser{
+	background-image: url("../images/button/bt_browser.png");
+}
+.bt_close{
+	background-position:0;
+	background-image: url("../images/button/close.png");
+	cursor: pointer;
+	height: 16px;
+	width: 16px;
+	border: none;
+}
