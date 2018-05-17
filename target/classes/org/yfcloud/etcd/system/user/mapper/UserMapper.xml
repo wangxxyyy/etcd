@@ -115,7 +115,7 @@
     from user
     <where>
       <if test="name != null" >
-        and name = #{name,jdbcType=VARCHAR},
+        and name = #{name,jdbcType=VARCHAR}
       </if>
     </where>
   </select>

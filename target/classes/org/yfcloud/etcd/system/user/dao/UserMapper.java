@@ -1,5 +1,6 @@
 package org.yfcloud.etcd.system.user.dao;
 
+import org.apache.ibatis.annotations.Param;
 import org.yfcloud.etcd.system.user.model.User;
 
 import java.util.List;
@@ -21,7 +22,7 @@ public interface UserMapper {
 
     void resetPassword(String userId, String passwd);
 
-    List<User> getUserList(String name);
+    List<User> getUserList(@Param("name") String name);
 
     void saveModifyPassword(String id, String newPassword);
 }
