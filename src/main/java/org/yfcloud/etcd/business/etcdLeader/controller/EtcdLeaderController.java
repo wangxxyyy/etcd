@@ -1,7 +1,5 @@
 package org.yfcloud.etcd.business.etcdLeader.controller;
 
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -10,11 +8,8 @@ import org.apache.http.util.EntityUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.yfcloud.etcd.business.etcdParameter.model.Etcd;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Administrator on 2017/12/16 0016.
@@ -32,9 +27,9 @@ public class EtcdLeaderController {
 
     @RequestMapping("/getLeader")
     @ResponseBody
-    public List getHealthy() {
+    public String getHealthy() {
         //调用健康状态接口
-        List<Etcd> etcdList = new ArrayList<Etcd>();
+        //List<Etcd> etcdList = new ArrayList<Etcd>();
 
         HttpClient httpClient = new DefaultHttpClient();
         //指定请求方式
@@ -46,18 +41,18 @@ public class EtcdLeaderController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        String result = null;
         //判断请求是否成功
         int status = httpResponse.getStatusLine().getStatusCode();
         if (status == 200) {
             //读取响应内容
-            String result = null;
             try {
                 result = EntityUtils.toString( httpResponse.getEntity(), "UTF-8" );
             } catch (IOException e) {
                 e.printStackTrace();
             }
             //json处理
-            JSONArray jsonArray = JSONArray.fromObject( result );
+            /*JSONArray jsonArray = JSONArray.fromObject( result );
             for (int i = 0; i < jsonArray.size(); i++) {
                 Etcd etcd = new Etcd();
                 JSONObject jsonObject = jsonArray.getJSONObject( i );
@@ -66,8 +61,8 @@ public class EtcdLeaderController {
                 etcd.setResponseTime( Double.valueOf( jsonObject.getString( "responseTime" ) ) );
                 etcd.setResult( jsonObject.getString( "result" ) );
                 etcdList.add( etcd );
-            }
+            }*/
         }
-        return etcdList;
+        return result;
     }
 }

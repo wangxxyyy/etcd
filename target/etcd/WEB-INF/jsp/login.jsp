@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -15,6 +16,7 @@
         function login(){
             var  loginName = $("#loginName").val();
             var  loginPassword = $("#loginPassword").val();
+            var  checkCode = $("#checkCode").val();
             $("#loginNameDesc").text("");
             $("#loginPasswordDesc").text("");
             if(loginName == ""){
@@ -25,6 +27,7 @@
                 $("#loginPasswordDesc").text("请输入密码");
                 return;
             }
+
             $.ajax({
                 type: "POST",
                 url: "user/login",
@@ -43,6 +46,10 @@
                 }
             });
         }
+        
+        function reload () {
+            document.getElementById("CreateCheckCode").src = document.getElementById("CreateCheckCode").src + "?nocache=" + new Date().getTime();
+        }
     </script>
 </head>
 <div class="logo_box">
@@ -56,6 +63,13 @@
             <input  type="password" name="loginPassword" class="text" id="loginPassword" placeholder="请输入密码" style="color: #FFFFFF !important; position: absolute; z-index: 100;">
             <span  style="width:110px;font-style:normal; line-height: 33px; color:red; padding-left:5px;font-size: 10px" id="loginPasswordDesc"></span>
         </div>
+        <div class="input_outer">
+            <input  type="text" name="checkCode" class="text" id="checkCode" placeholder="验证码区分大小写" style="color: #FFFFFF !important; position: absolute; z-index: 100;" size="8" ,maxlength="4" >
+            <img style="position: absolute;right: -99px;top: 19px;" src="CheckCodeController" id="CreateCheckCode">
+            <a href="" style="padding-right: 40px;position: absolute;right: -235px;top: 20px;color: #FFFFFF;" onclick="reload()"> 看不清,换一个</a>
+            <span  style="width:110px;font-style:normal; line-height: 33px; color:red; padding-left:5px;font-size: 10px" id="checkCodeDesc"></span>
+        </div>
+
         <div class="mb2">
             <a class="act-but submit" href="javascript:;" style="color: #FFFFFF" onclick="login()">登录</a>
         </div>

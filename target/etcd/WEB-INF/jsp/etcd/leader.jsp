@@ -171,7 +171,7 @@
            data-options="url:'etcd/getLeader',nowrap:false">
         <thead>
         <tr>
-            <th data-options="field:'nodeName',width:200,align:'center'">集群代理名字</th>
+            <th data-options="field:'node',width:200,align:'center'">集群代理名字</th>
             <th data-options="field:'statusCode',width:100,align:'center'">集群运行状态码</th>
             <th data-options="field:'responseTime',width:100,align:'center'">集群响应时间</th>
             <th data-options="field:'result',with:80,align:'center'">集群答复结果</th>

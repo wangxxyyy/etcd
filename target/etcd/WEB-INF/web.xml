@@ -51,6 +51,16 @@
     <load-on-startup>1</load-on-startup>
   </servlet>
 
+    <servlet>
+        <servlet-name>CheckCodeController</servlet-name>
+        <servlet-class>org.yfcloud.etcd.system.user.controller.CheckCodeController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CheckCodeController</servlet-name>
+        <url-pattern>/CheckCodeController</url-pattern>
+    </servlet-mapping>
+
   <servlet-mapping>
     <servlet-name>spring</servlet-name>
     <url-pattern>/</url-pattern>

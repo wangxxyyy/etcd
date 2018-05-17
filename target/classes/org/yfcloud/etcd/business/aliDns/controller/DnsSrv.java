@@ -30,6 +30,7 @@ import java.util.Map;
  * Created by Administrator on 2017/12/22 0022.
  */
 @Controller
+@RequestMapping("/dnsRecord")
 public class DnsSrv {
     
     final String HTTP_METHOD = "GET";
@@ -43,7 +44,7 @@ public class DnsSrv {
 
     private static final String host = "http://alidns.aliyuncs.com/?";
 
-    @RequestMapping("/addDnsRecord")
+    @RequestMapping("/add")
     public ModelAndView view(HttpServletRequest request) throws UnsupportedEncodingException,
             NoSuchAlgorithmException {
 
@@ -86,7 +87,7 @@ public class DnsSrv {
             for (String key : parameters.keySet().toArray( new String[]{} )) {
                 params.append( key );
                 params.append( "=" );
-                params.append( percentEncode( parameters.get( key ) ) );
+                params.append(percentEncode( parameters.get( key ) ) );
                 params.append( "&" );
             }
             String url = host + params.toString();
@@ -100,7 +101,7 @@ public class DnsSrv {
             // 生成stringToSign字符串
             StringBuilder stringToSign = new StringBuilder();
             stringToSign.append( HTTP_METHOD ).append( SEPARATOR );
-            stringToSign.append( percentEncode( "/" ) ).append( SEPARATOR );
+            stringToSign.append(percentEncode( "/" ) ).append( SEPARATOR );
 
             StringBuilder canonicalizedQueryString = new StringBuilder();
             for (String key : sortedKeys) {

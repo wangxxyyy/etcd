@@ -43,7 +43,7 @@ public class EtcdHealthController {
         //执行请求
         HttpResponse httpResponse = null;
         try {
-            httpResponse = httpClient.execute(httpGet);
+                httpResponse = httpClient.execute(httpGet);
         } catch (IOException e) {
             e.printStackTrace();
         }
